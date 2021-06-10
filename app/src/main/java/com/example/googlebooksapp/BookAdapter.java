@@ -61,9 +61,9 @@ public class BookAdapter extends ArrayAdapter<Book> {
         return listItemView;
     }
 
-    private String formatRate(double magnitude) {
-        DecimalFormat magnitudeFormat = new DecimalFormat("0.0");
-        return magnitudeFormat.format(magnitude);
+    private String formatRate(double rate) {
+        DecimalFormat rateFormat = new DecimalFormat("0.0");
+        return rateFormat.format(rate);
     }
 
 }

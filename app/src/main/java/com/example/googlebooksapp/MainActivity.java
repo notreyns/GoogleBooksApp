@@ -44,16 +44,13 @@ public class MainActivity extends AppCompatActivity {
                 return null;
             }
 
-            List<Book> result = QueryUtils.fetchEarthquakeData(urls[0]);
+            List<Book> result = QueryUtils.fetchBookData(urls[0]);
             return result;
         }
 
         @Override
         protected void onPostExecute(List<Book> data) {
             adapter.clear();
-
-            // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
-            // data set. This will trigger the ListView to update.
             if (data != null && !data.isEmpty()) {
                 adapter.addAll(data);
             }
