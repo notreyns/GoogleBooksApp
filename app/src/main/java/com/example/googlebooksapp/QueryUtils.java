@@ -120,7 +120,7 @@ public final class QueryUtils {
                 if (volume.has("publishedDate")){
                     publDate = volume.getString("publishedDate");
                 }else {
-                    publDate = "No information about date";
+                    publDate = "No info about date";
                 }
 
                 JSONObject imageLinks= volume.getJSONObject("imageLinks");
@@ -128,9 +128,6 @@ public final class QueryUtils {
 
 
                 double rate= volume.getDouble("averageRating");
-
-
-
 
                 Book book = new Book(title, author, pageCount, publDate, imageUrl, rate);
 
