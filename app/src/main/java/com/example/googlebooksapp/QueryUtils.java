@@ -129,7 +129,11 @@ public final class QueryUtils {
 
                 double rate= volume.getDouble("averageRating");
 
-                Book book = new Book(title, author, pageCount, publDate, imageUrl, rate);
+                JSONObject accessInfo= currentBook.getJSONObject("accessInfo");
+                String url= accessInfo.getString("webReaderLink");
+
+
+                Book book = new Book(title, author, pageCount, publDate, imageUrl, rate, url);
 
                 books.add(book);
             }

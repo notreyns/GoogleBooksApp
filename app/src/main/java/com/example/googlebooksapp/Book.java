@@ -7,16 +7,17 @@ public class Book {
     private String time;
     private String coverImage;
     private double rating;
+    private String url;
 
     public Book(){}
-    public Book(String title, String author,int pages,String time, String img, double rating){
+    public Book(String title, String author,int pages,String time, String img, double rating, String url){
         this.title=title;
         this.author=author;
         this.pagesCount=pages;
         this.time=time;
         this.coverImage=img;
         this.rating=rating;
-
+        this.url=url;
     }
 
     public double getRating() {
@@ -66,5 +67,13 @@ public class Book {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

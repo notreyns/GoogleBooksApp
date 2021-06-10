@@ -47,22 +47,15 @@ public class MainActivity extends AppCompatActivity {
                 task.execute(GOOGLEBOOK_REQUEST_URL);
             }
         });
-        //bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-        // @Override
-        //public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-        // Find the current earthquake that was clicked on
-        // Book currentBook = adapter.getItem(position);
-
-        // Convert the String URL into a URI object (to pass into the Intent constructor)
-        //Uri bookUri = Uri.parse(currentBook.getUrl());
-
-        // Create a new intent to view the earthquake URI
-        //Intent websiteIntent = new Intent(Intent.ACTION_VIEW,currentUri);
-
-        // Send the intent to launch a new activity
-        //startActivity(websiteIntent);
-        //  }
-        // });
+        bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+         @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+         Book currentBook = adapter.getItem(position);
+        Uri bookUri = Uri.parse(currentBook.getUrl());
+        Intent websiteIntent = new Intent(Intent.ACTION_VIEW,bookUri);
+        startActivity(websiteIntent);
+         }
+     });
     }
     private class BookAsyncTask extends AsyncTask<String, Void, List<Book>> {
 
